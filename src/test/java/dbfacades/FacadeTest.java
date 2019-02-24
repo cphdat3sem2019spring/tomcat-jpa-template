@@ -27,7 +27,7 @@ public class FacadeTest {
 
   @BeforeClass
   public static void setUpDB(){
-    emf = Persistence.createEntityManagerFactory("pu-test");
+    emf = Persistence.createEntityManagerFactory("pu-unit-test-memory-mock");
   }
   
   /**
