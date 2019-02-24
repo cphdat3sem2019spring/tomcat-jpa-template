@@ -8,7 +8,7 @@ import io.restassured.parsing.Parser;
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 import static org.hamcrest.Matchers.*;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,8 +22,7 @@ public class IntegrationTest {
   private static final String APP_CONTEXT = "/restdemo";  //IMPORTANT--> this should reflect the value in META-INF/context.xml
   private static EntityManagerFactory emf;
 
-  public IntegrationTest() throws NamingException {
-  }
+  public IntegrationTest() throws NamingException {}
 
   @Test
   public void serverIsRunning() {

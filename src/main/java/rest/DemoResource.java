@@ -19,6 +19,7 @@ import dtos.Data;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import listeners.DeploymentConfiguration;
+import utils.PuSelector;
 
 /**
  * REST Web Service
@@ -27,8 +28,8 @@ import listeners.DeploymentConfiguration;
 public class DemoResource {
 
   private static String responseToPing = "Pong";
-  //private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory(DeploymentConfiguration.getPuName());
-  private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory(utils.PuSelector.getPuName());
+  private static final EntityManagerFactory emf = PuSelector.getEntityManagerFactory();
+  //private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory(utils.PuSelector.getPuName());
  
    
   private static DemoFacade facade = new DemoFacade(emf);
