@@ -20,7 +20,6 @@ public class DemoFacade {
   EntityManagerFactory emf;
 
   public DemoFacade(EntityManagerFactory emf) {
-    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>   "+emf);
     this.emf = emf;
   }
 

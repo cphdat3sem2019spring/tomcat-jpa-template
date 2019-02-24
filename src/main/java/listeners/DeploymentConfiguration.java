@@ -1,8 +1,6 @@
 package listeners;
 
-import entity.Car;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -17,6 +15,10 @@ public class DeploymentConfiguration implements ServletContextListener {
   @Override
   public void contextInitialized(ServletContextEvent sce) {
     String puVal = System.getProperty("PU_NAME");
+    String puValEnv = System.getenv("PU_NAME");
+    System.out.println(">>>>>>> "+puVal +", >>>>>>>>>>>>> "+puValEnv);
+     
+    
     if (puVal != null) {
       PU_NAME = puVal;
     }
