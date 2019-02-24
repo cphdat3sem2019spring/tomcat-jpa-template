@@ -6,7 +6,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener
+//@WebListener
 public class DeploymentConfiguration implements ServletContextListener {
 
   private static String PU_NAME = "pu";
@@ -22,13 +22,17 @@ public class DeploymentConfiguration implements ServletContextListener {
     if (puVal != null) {
       PU_NAME = puVal;
     }
-    Persistence.generateSchema(PU_NAME, null);
-    emf = Persistence.createEntityManagerFactory(PU_NAME);
+//    Persistence.generateSchema(PU_NAME, null);
+//    emf = Persistence.createEntityManagerFactory(PU_NAME);
   }
 
   public static EntityManagerFactory getEntityManagerFactory() {
     System.out.println("------> " + PU_NAME);
     return emf;
+  }
+  public static String getPuName() {
+    System.out.println("------> " + PU_NAME);
+    return PU_NAME;
   }
 
   @Override
