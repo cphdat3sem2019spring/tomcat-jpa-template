@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- If you change the Context-path, you should also change the matching value used by the integration test -->
+<Context  path="/restdemo"/>
+

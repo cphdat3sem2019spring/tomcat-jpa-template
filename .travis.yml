@@ -1,0 +1,14 @@
+language: java
+jdk: oraclejdk8
+
+cache:
+  directories:
+    - $HOME/.m2
+
+script:
+  - mvn -DPU_NAME=pu-test-on-travis verify
+
+services:
+   - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE seed;
