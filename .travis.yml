@@ -10,5 +10,6 @@ script:
 
 services:
    - mysql
+   
 before_install:
-  - mysql -e 'CREATE DATABASE seed;
+  - mysql -e 'CREATE DATABASE seed;'
