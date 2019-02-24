@@ -11,26 +11,22 @@ public class PuSelector {
 
   public static EntityManagerFactory getEntityManagerFactory() {
     if(emf != null){
-       System.out.println("------> " + PU_NAME);
+       System.out.println("--- Created EntityManagerFactory --> " + PU_NAME);
       return emf;
     }
     String puVal = System.getProperty("PU_NAME");
-    //String puValEnv = System.getenv("PU_NAME");
     System.out.println(">>>>>>>>>>>>>>>>>>>> "+puVal);
     if (puVal != null) {
       PU_NAME = puVal;
     }
     Properties props = null;
     if(PU_NAME.equals("pu-test-on-travis")){
-      System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+puVal);
       /*REF: https://stackoverflow.com/questions/7227814/jpa-using-alternative-persistence-xml */
       props = new Properties();
-      props.setProperty(PersistenceUnitProperties.ECLIPSELINK_PERSISTENCE_XML,"META-INF/persistence-for-travis.xml"); 
-      //Map<String, String> defaultProperties = new HashMap<String, String>();
-      
+      props.setProperty(PersistenceUnitProperties.ECLIPSELINK_PERSISTENCE_XML,"META-INF/persistence-for-travis.xml");  
     }
     emf = Persistence.createEntityManagerFactory(PU_NAME, props); 
-    System.out.println("------> " + PU_NAME);
+    System.out.println("--- Created EntityManagerFactory --> " + PU_NAME);
     return emf;
   }  
 }
