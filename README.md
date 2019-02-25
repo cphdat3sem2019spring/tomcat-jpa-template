@@ -6,9 +6,11 @@ run localy like:
 ###Before start
 - Create a development Database locally
 - Create a test database locally (to be used for integration tests)
+- Rename persistence_TEMPLATE.xml --> persistence.xml. DON'T change the persistence-unit names, but update the rest to point to your two databases
 
-mvn test
-mvn -DPU_NAME=pu-test-with-mysql verify     This sets the name of the persistence-unit to be used with integration tests
+### Run like
+- mvn test
+- mvn -DPU_NAME=pu-test-with-mysql verify     This sets the name of the persistence-unit to be used with integration tests
 
 ## Info
 see .travis.yml for how to execute integration tests on travis
