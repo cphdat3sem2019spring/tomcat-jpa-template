@@ -17,8 +17,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import dtos.Data;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import listeners.DeploymentConfiguration;
+
 import utils.PuSelector;
 
 /**

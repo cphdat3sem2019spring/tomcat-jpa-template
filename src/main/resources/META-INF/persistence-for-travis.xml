@@ -1,4 +1,10 @@
-
+<!-- 
+     Used to setup a database for Integration testing on travis 
+     Since the "normal" persistence.xml is gitignored, this is placed in a separate file like this
+     See the class PuSelector for details of how this is used. When testing on Travis integration tests bust be started as given below:
+     
+          mvn -DPU_NAME=pu-test-on-travis verify
+-->
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="pu-test-on-travis" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>

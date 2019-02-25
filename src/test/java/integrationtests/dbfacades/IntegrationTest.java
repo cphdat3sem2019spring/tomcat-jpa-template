@@ -31,7 +31,6 @@ public class IntegrationTest {
 
   @BeforeClass
   public static void setUpBeforeAll() {
-    //emf = Persistence.createEntityManagerFactory("pu-test-with-mysql");
     emf = PuSelector.getEntityManagerFactory();
     RestAssured.baseURI = "http://localhost";
     RestAssured.port = SERVER_PORT;

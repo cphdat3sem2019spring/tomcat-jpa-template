@@ -1,0 +1,40 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  
+  <!-- Persistence Unit meant for local development. Each member in a team should create his local DB refered to by this PU -->
+  <persistence-unit name="pu" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ADD_YOUR_LOCAL_DB_NAME"/>
+      <property name="javax.persistence.jdbc.user" value="ADD_YOUR_DB_USER"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="ADD_PASSWORD_FOR_YOUR_USER"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <!-- Important: With more than one Persistence Unit in a file, each must have a subpackage name. If you forget you get STRANGE errors -->
+      <property name="eclipselink.canonicalmodel.subpackage" value="development"/>
+    </properties>
+  </persistence-unit>
+ 
+   <!-- Persistence Unit meant for local INTEGRATION tests.
+        Each member in a team should create his local DB refered to by this PU
+        With the setup provide by this start code you should run your local integration tests as sketched below:
+        mvn -DPU_NAME=pu-test-with-mysql verify 
+        Shis will make nUnit use this database, and your Tomcat project will use it also. So you can set DATA before your tests,
+        and that will reflect the running server you are actually testing.
+  -->
+  <persistence-unit name="pu-test-with-mysql" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ADD_YOUR_LOCAL_TEST_DB_NAME"/>
+      <property name="javax.persistence.jdbc.user" value="ADD_YOUR_DB_USER"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="ADD_PASSWORD_FOR_YOUR_USER"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+       <!-- Important: With more than one Persistence Unit in a file, each must have a subpackage name. If you forget you get STRANGE errors -->
+      <property name="eclipselink.canonicalmodel.subpackage" value="testmysql"/>
+    </properties>
+  </persistence-unit>  
+</persistence>

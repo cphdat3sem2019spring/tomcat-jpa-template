@@ -5,6 +5,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 
+/**
+ * Returns an EntityManagerFactory using the provided PU_NAME (supplied via Maven)
+ * 
+ */
 public class PuSelector {
    private static String PU_NAME = "pu";
    private static EntityManagerFactory emf;
