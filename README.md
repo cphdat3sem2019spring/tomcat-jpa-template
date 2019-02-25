@@ -1,5 +1,5 @@
 # Not Yet Complete
-
+[![Build Status](https://travis-ci.org/cphdat3sem2019spring/tomcat-jpa-template.svg?branch=master)](https://travis-ci.org/cphdat3sem2019spring/tomcat-jpa-template)
 
 run localy like:
 
