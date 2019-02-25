@@ -10,7 +10,7 @@ run localy like:
 
 ### Run like
 - mvn test
-- mvn -DPU_NAME=pu-test-with-mysql verify     This sets the name of the persistence-unit to be used with integration tests
+- mvn `-DPU_NAME=pu-test-with-mysql verify`     This sets the name of the persistence-unit to be used with integration tests
 
 ## Info
 see .travis.yml for how to execute integration tests on travis
